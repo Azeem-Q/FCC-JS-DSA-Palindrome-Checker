@@ -1,6 +1,7 @@
 // Palindrome Checker
 
 function palindrome(str) {
+    str = str.toLowerCase();
     let strArr = str.split('');
     let filteredArr = []
     for (let i = 0; i < strArr.length; i++) {
@@ -8,7 +9,9 @@ function palindrome(str) {
             filteredArr.push(strArr[i]);
         }
     }
-    console.log(filteredArr);
+    str = filteredArr.join('');
+    let strRev = filteredArr.reverse().join('');
+    return str == strRev;
 }
 
-console.log(palindrome("2_A3*3#A2"))
+console.log(palindrome("A man, a plan, a canal. Panama"))
